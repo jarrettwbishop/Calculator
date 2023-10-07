@@ -44,8 +44,9 @@ button:hover {
     flex-direction: column;
     justify-content: space-around;
     border-radius: 1em;
-    height: 60vh;
-    width: 30vw;
+    height: 600px;
+    width: 400px;
+    flex-shrink: 0;
 }
 
 #display {
@@ -64,7 +65,7 @@ button:hover {
 .row-1 {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 10px;
     margin-right: 5px;
 }
