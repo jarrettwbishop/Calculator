@@ -3,55 +3,100 @@
     padding: 0;
     font-family: poppins;
     font-size: 20px;
+    overflow: hidden;
 }
 
 body {
     height: 100vh;
-    width: 100vw;
     display: flex;
     flex-direction: column;
+}
+
+
+
+main {
+    background-color: #e3e3e3;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    text-align: center;
+    flex: 1;
 }
 
 button {
-    width: 4em;
-    height: 4em;
+    width: 3.5em;
+    height: 3.5em;
     border: 1px solid grey;
     border-radius: 20%;
-    margin: 3px;
+    background-color: white;
+    box-shadow: 0 0 5px 1px rgba(36, 36, 36, 0.219);
+}
+
+button:hover {
+    background-color: lightgray;
 }
 
 .calculator {
-    background-color: lightgray;
-    border: 2px solid black;
+    background-color: white;
+    box-shadow: 0 0 30px 2px rgba(0, 0, 0, 0.068);
     margin: 15px;
     padding: 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    border-radius: 3%;
+    justify-content: space-around;
+    border-radius: 1em;
+    height: 60vh;
+    width: 30vw;
 }
 
 #display {
     height: 10%;
     border: 1px solid grey;
-    border-radius: 5%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 5px;
     margin: 10px;
     font-size: 50px;
+    background-color: white;
+    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.11);
+}
+
+.row-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-right: 5px;
+}
+.row-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+.row-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+.row-4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+.row-5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
 }
   
 
 footer {
+    padding: 2em 0;
+    text-align: center;
+    background-color: #e3e3e3;
     width: 100%;
-    background: grey;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 500;
 }
