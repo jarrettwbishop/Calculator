@@ -1,12 +1,13 @@
 const display = document.getElementById("display")
-let numOne = 0;
-let numTwo = 0;
+
+let displayValue = 0;
+let currentValue = 0
 let operation;
 
 const Add = function() {
     operation = "+"
-    numOne = display.textContent
-    Operate(numOne,numTwo,operation)
+    currentValue = Operate(displayValue,currentValue,operation)
+    displayValue = 0;    
 }
 
 const Subtract = function() {
@@ -22,24 +23,29 @@ const Divide = function() {
 }
 
 const Equals = function() {
-
+    currentValue = Operate(displayValue,currentValue,operation)
+    displayValue = 0;
 }
 
 const Operate = function(a,b,operator) {
     switch(operator) {
         case "+":
-            return a + b
+            return display.textContent = Number(a) + Number(b)
         case "-":
-            return a - b
+            return display.textContent = Number(a) - Number(b)
+            break;
         case "*":
-            return a * b
+            break;
         case "/":
-            return a / b
+            break;
     }
 }
 
 const Clear = function() {
-    display.textContent = 0;
+    displayValue = 0;
+    currentValue = 0;
+    display.textContent = displayValue;
+    
 }
 
 const Delete = function() {
@@ -49,122 +55,119 @@ const Delete = function() {
 }
 
 const One = function() {
-    let updated = display.textContent.split("")
-    if (updated[0] > 0) {
-        updated.push("1")
-        display.textContent = updated.join("")
-        
+    if (displayValue == 0) {
+        displayValue = 1
+        display.textContent = displayValue
     } else {
-        display.textContent = 1
-        
+        let temp = displayValue.toString().split("")
+        temp.push("1")
+        displayValue = temp.join("")
+        display.textContent = displayValue
+
     }
 }
 
 const Two = function() {
-    let updated = display.textContent.split("")
-    if (updated[0] > 0) {
-        updated.push("2")
-        display.textContent = updated.join("")
-        
+    if (displayValue == 0) {
+        displayValue = 2
+        display.textContent = displayValue
     } else {
-        display.textContent = 2
-        
+        let temp = displayValue.toString().split("")
+        temp.push("2")
+        displayValue = temp.join("")
+        display.textContent = displayValue
+
     }
 }
 
 const Three = function() {
-    let updated = display.textContent.split("")
-    if (updated[0] > 0) {
-        updated.push("3")
-        display.textContent = updated.join("")
-        
+    if (displayValue == 0) {
+        displayValue = 3
+        display.textContent = displayValue
     } else {
-        display.textContent = 3
-        
+        let temp = displayValue.toString().split("")
+        temp.push("3")
+        displayValue = temp.join("")
+        display.textContent = displayValue
+
     }
 }
 
 const Four = function() {
-    let updated = display.textContent.split("")
-    if (updated[0] > 0) {
-        updated.push("4")
-        display.textContent = updated.join("")
-        
+    if (displayValue == 0) {
+        displayValue = 4
+        display.textContent = displayValue
     } else {
-        display.textContent = 4
-        
+        let temp = displayValue.toString().split("")
+        temp.push("4")
+        displayValue = temp.join("")
+        display.textContent = displayValue
+
     }
 }
 
 const Five = function() {
-    let updated = display.textContent.split("")
-    if (updated[0] > 0) {
-        updated.push("5")
-        display.textContent = updated.join("")
-        
+    if (displayValue == 0) {
+        displayValue = 5
+        display.textContent = displayValue
     } else {
-        display.textContent = 5
-        
+        let temp = displayValue.toString().split("")
+        temp.push("5")
+        displayValue = temp.join("")
+        display.textContent = displayValue
+
     }
 }
 
 const Six = function() {
-    let updated = display.textContent.split("")
-    if (updated[0] > 0) {
-        updated.push("6")
-        display.textContent = updated.join("")
-        
+    if (displayValue == 0) {
+        displayValue = 6
+        display.textContent = displayValue
     } else {
-        display.textContent = 6
-        
+        let temp = displayValue.toString().split("")
+        temp.push("6")
+        displayValue = temp.join("")
+        display.textContent = displayValue
+
     }
 }
 
 const Seven = function() {
-    let updated = display.textContent.split("")
-    if (updated[0] > 0) {
-        updated.push("7")
-        display.textContent = updated.join("")
-        
+    if (displayValue == 0) {
+        displayValue = 7
+        display.textContent = displayValue
     } else {
-        display.textContent = 7
-        
+        let temp = displayValue.toString().split("")
+        temp.push("7")
+        displayValue = temp.join("")
+        display.textContent = displayValue
+
     }
 }
 
 const Eight = function() {
-    let updated = display.textContent.split("")
-    if (updated[0] > 0) {
-        updated.push("8")
-        display.textContent = updated.join("")
-        
+    if (displayValue == 0) {
+        displayValue = 8
+        display.textContent = displayValue
     } else {
-        display.textContent = 8
-        
+        let temp = displayValue.toString().split("")
+        temp.push("8")
+        displayValue = temp.join("")
+        display.textContent = displayValue
+
     }
 }
 
 const Nine = function() {
-    let updated = display.textContent.split("")
-    if (updated[0] > 0) {
-        updated.push("9")
-        display.textContent = updated.join("")
-        
+    if (displayValue == 0) {
+        displayValue = 9
+        display.textContent = displayValue
     } else {
-        display.textContent = 9
-        
-    }
-}
+        let temp = displayValue.toString().split("")
+        temp.push("9")
+        displayValue = temp.join("")
+        display.textContent = displayValue
 
-const Zero = function() {
-    let updated = display.textContent.split("")
-    if (updated[0] > 0) {
-        updated.push("0")
-        display.textContent = updated.join("")
-        
-    } else {
-        display.textContent = 0
-        
     }
 }
 
