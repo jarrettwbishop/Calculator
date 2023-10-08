@@ -1,17 +1,22 @@
 const display = document.getElementById("display")
 
 let displayValue = 0;
-let currentValue = 0
+
+let valOne = 0;
+let valTwo = 0;
 let operation;
 
 const Add = function() {
     operation = "+"
-    currentValue = Operate(displayValue,currentValue,operation)
+    valOne > 0 ? valTwo = displayValue : valOne = displayValue
+    valOne = Operate(valOne,valTwo,operation)
+    valTwo = 0;
     displayValue = 0;    
 }
 
 const Subtract = function() {
     operation = "-"
+    valOne = Operate(valOne,displayValue,operation)
 }
 
 const Multiply = function() {
@@ -23,7 +28,7 @@ const Divide = function() {
 }
 
 const Equals = function() {
-    currentValue = Operate(displayValue,currentValue,operation)
+    valOne = Operate(valOne,displayValue,operation)
     displayValue = 0;
 }
 
@@ -33,7 +38,6 @@ const Operate = function(a,b,operator) {
             return display.textContent = Number(a) + Number(b)
         case "-":
             return display.textContent = Number(a) - Number(b)
-            break;
         case "*":
             break;
         case "/":
@@ -43,7 +47,8 @@ const Operate = function(a,b,operator) {
 
 const Clear = function() {
     displayValue = 0;
-    currentValue = 0;
+    valOne = 0;
+    valTwo = 0;
     display.textContent = displayValue;
     
 }
@@ -165,6 +170,19 @@ const Nine = function() {
     } else {
         let temp = displayValue.toString().split("")
         temp.push("9")
+        displayValue = temp.join("")
+        display.textContent = displayValue
+
+    }
+}
+
+const Zero = function() {
+    if (displayValue == 0) {
+        displayValue = 0
+        display.textContent = displayValue
+    } else {
+        let temp = displayValue.toString().split("")
+        temp.push("0")
         displayValue = temp.join("")
         display.textContent = displayValue
 
