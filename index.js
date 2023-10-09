@@ -7,6 +7,9 @@ let valTwo = 0;
 let operation;
 
 const Add = function() {
+    if( valOne > 0 && displayValue > 0) {
+        valOne = Operate(valOne,valTwo,operation)
+    }
     operation = "+"
     valOne > 0 ? valTwo = displayValue : valOne = displayValue
     valOne = Operate(valOne,valTwo,operation)
@@ -15,16 +18,40 @@ const Add = function() {
 }
 
 const Subtract = function() {
+    if( valOne > 0 && displayValue > 0) {
+        valOne = Operate(valOne,valTwo,operation)
+    }
     operation = "-"
-    valOne = Operate(valOne,displayValue,operation)
+    valOne > 0 ? valTwo = displayValue : valOne = displayValue
+    valOne = Operate(valOne,valTwo,operation)
+    valTwo = 0;
+    displayValue = 0;
 }
 
 const Multiply = function() {
+    if( valOne > 0 && displayValue > 0) {
+        valOne = Operate(valOne,valTwo,operation)
+    }
     operation = "*"
+    valOne > 0 ? valTwo = displayValue : valOne = displayValue
+    if (valTwo > 0 || valTwo < 0) {
+        valOne = Operate(valOne,valTwo,operation)
+    }
+    valTwo = 0;
+    displayValue = 0;
 }
 
 const Divide = function() {
+    if( valOne > 0 && displayValue > 0) {
+        valOne = Operate(valOne,valTwo,operation)
+    }
     operation = "/"
+    valOne > 0 ? valTwo = displayValue : valOne = displayValue
+    if (valTwo > 0 || valTwo < 0) {
+        valOne = Operate(valOne,valTwo,operation)
+    }
+    valTwo = 0;
+    displayValue = 0;
 }
 
 const Equals = function() {
@@ -39,9 +66,13 @@ const Operate = function(a,b,operator) {
         case "-":
             return display.textContent = Number(a) - Number(b)
         case "*":
-            break;
+            return display.textContent = Number(a) * Number(b)
         case "/":
-            break;
+            if (b != 0) {
+                return display.textContent = Number(a) / Number(b)
+            }
+            return display.textContent = "Error"
+            
     }
 }
 
@@ -57,6 +88,7 @@ const Delete = function() {
     let updated = display.textContent.split("")
     updated.pop()
     display.textContent = updated.join("")
+
 }
 
 const One = function() {
