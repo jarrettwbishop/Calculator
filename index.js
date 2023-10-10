@@ -6,7 +6,7 @@ let valOne = 0;
 let valTwo = 0;
 let operation;
 
-const Add = function() {
+const Add = function() { 
     if( valOne > 0 && displayValue > 0) {
         valOne > 0 ? valTwo = displayValue : valOne = displayValue
         valOne = Operate(valOne,valTwo,operation)
@@ -82,16 +82,45 @@ const Equals = function() {
 }
 
 const Operate = function(a,b,operator) {
+    let result;
+    let decimalPlaces;
+    let decimalMath = "1";
     switch(operator) {
         case "+":
-            return display.textContent = Number(a) + Number(b)
+            result = Number(a) + Number(b)
+            decimalPlaces = 9 - result.toString().split("").slice(0, result.toString().split("").lastIndexOf(".")).length
+            for (let i = 0; i < decimalPlaces; i++) {
+                decimalMath += "0";
+            }
+            result = Math.round(result * decimalMath) / decimalMath
+            return display.textContent = result
         case "-":
-            return display.textContent = Number(a) - Number(b)
+            result = Number(a) - Number(b)
+            decimalPlaces = 9 - result.toString().split("").slice(0, result.toString().split("").lastIndexOf(".")).length
+            for (let i = 0; i < decimalPlaces; i++) {
+                decimalMath += "0";
+            }
+            result = Math.round(result * decimalMath) / decimalMath
+            return display.textContent = result
         case "*":
-            return display.textContent = Number(a) * Number(b)
+            result = Number(a) * Number(b)
+            decimalPlaces = 9 - result.toString().split("").slice(0, result.toString().split("").lastIndexOf(".")).length
+            for (let i = 0; i < decimalPlaces; i++) {
+                decimalMath += "0";
+            }
+            result = Math.round(result * decimalMath) / decimalMath
+            return display.textContent = result
         case "/":
             if (b != 0) {
-                return display.textContent = Number(a) / Number(b)
+                result = Number(a) / Number(b)
+                decimalPlaces = 9 - result.toString().split("").slice(0, result.toString().split("").lastIndexOf(".")).length
+                for (let i = 0; i < decimalPlaces; i++) {
+                    decimalMath += "0";
+                    console.log(decimalMath)
+                }
+                console.log(decimalMath)
+                result = Math.round(result * decimalMath) / decimalMath
+                return display.textContent = result
             }
             return display.textContent = "Error"
             
@@ -124,7 +153,7 @@ const One = function() {
         display.textContent = displayValue
     } else {
         let temp = displayValue.toString().split("")
-        temp.push("1")
+        if (temp.length < 9) temp.push("1")
         displayValue = temp.join("")
         display.textContent = displayValue
 
@@ -137,7 +166,7 @@ const Two = function() {
         display.textContent = displayValue
     } else {
         let temp = displayValue.toString().split("")
-        temp.push("2")
+        if (temp.length < 9) temp.push("2")
         displayValue = temp.join("")
         display.textContent = displayValue
 
@@ -150,7 +179,7 @@ const Three = function() {
         display.textContent = displayValue
     } else {
         let temp = displayValue.toString().split("")
-        temp.push("3")
+        if (temp.length < 9) temp.push("3")
         displayValue = temp.join("")
         display.textContent = displayValue
 
@@ -163,7 +192,7 @@ const Four = function() {
         display.textContent = displayValue
     } else {
         let temp = displayValue.toString().split("")
-        temp.push("4")
+        if (temp.length < 9) temp.push("4")
         displayValue = temp.join("")
         display.textContent = displayValue
 
@@ -176,7 +205,7 @@ const Five = function() {
         display.textContent = displayValue
     } else {
         let temp = displayValue.toString().split("")
-        temp.push("5")
+        if (temp.length < 9) temp.push("5")
         displayValue = temp.join("")
         display.textContent = displayValue
 
@@ -189,7 +218,7 @@ const Six = function() {
         display.textContent = displayValue
     } else {
         let temp = displayValue.toString().split("")
-        temp.push("6")
+        if (temp.length < 9) temp.push("6")
         displayValue = temp.join("")
         display.textContent = displayValue
 
@@ -202,7 +231,7 @@ const Seven = function() {
         display.textContent = displayValue
     } else {
         let temp = displayValue.toString().split("")
-        temp.push("7")
+        if (temp.length < 9) temp.push("7")
         displayValue = temp.join("")
         display.textContent = displayValue
 
@@ -215,7 +244,7 @@ const Eight = function() {
         display.textContent = displayValue
     } else {
         let temp = displayValue.toString().split("")
-        temp.push("8")
+        if (temp.length < 9) temp.push("8")
         displayValue = temp.join("")
         display.textContent = displayValue
 
@@ -228,7 +257,7 @@ const Nine = function() {
         display.textContent = displayValue
     } else {
         let temp = displayValue.toString().split("")
-        temp.push("9")
+        if (temp.length < 9) temp.push("9")
         displayValue = temp.join("")
         display.textContent = displayValue
 
@@ -241,7 +270,7 @@ const Zero = function() {
         display.textContent = displayValue
     } else {
         let temp = displayValue.toString().split("")
-        temp.push("0")
+        if (temp.length < 9) temp.push("0")
         displayValue = temp.join("")
         display.textContent = displayValue
 
@@ -255,7 +284,7 @@ const Dot = function() {
     } else {
         let temp = displayValue.toString().split("")
         if (temp.includes(".")) return;
-        temp.push(".")
+        if (temp.length < 8) temp.push(".")
         displayValue = temp.join("")
         display.textContent = displayValue
 
