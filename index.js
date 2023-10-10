@@ -79,6 +79,7 @@ const Equals = function() {
         valOne = Operate(valOne,displayValue,operation)
         displayValue = 0;
     } 
+    operation = ""
 }
 
 const Operate = function(a,b,operator) {
