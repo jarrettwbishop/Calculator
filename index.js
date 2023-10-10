@@ -75,8 +75,10 @@ const Divide = function() {
 }
 
 const Equals = function() {
-    valOne = Operate(valOne,displayValue,operation)
-    displayValue = 0;
+    if(valOne > 0) {
+        valOne = Operate(valOne,displayValue,operation)
+        displayValue = 0;
+    } 
 }
 
 const Operate = function(a,b,operator) {
