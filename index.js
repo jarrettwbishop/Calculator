@@ -106,6 +106,11 @@ const Clear = function() {
 
 const Delete = function() {
     let updated = display.textContent.split("")
+    console.log(updated.length)
+    if (updated.length == 1) {
+        display.textContent = 0
+        return;
+    }
     updated.pop()
     display.textContent = updated.join("")
 
