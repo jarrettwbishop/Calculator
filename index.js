@@ -125,7 +125,7 @@ const One = function() {
 }
 
 const Two = function() {
-    if (displayValue == 0) {
+    if (displayValue === 0) {
         displayValue = 2
         display.textContent = displayValue
     } else {
@@ -138,7 +138,7 @@ const Two = function() {
 }
 
 const Three = function() {
-    if (displayValue == 0) {
+    if (displayValue === 0) {
         displayValue = 3
         display.textContent = displayValue
     } else {
@@ -151,7 +151,7 @@ const Three = function() {
 }
 
 const Four = function() {
-    if (displayValue == 0) {
+    if (displayValue === 0) {
         displayValue = 4
         display.textContent = displayValue
     } else {
@@ -164,7 +164,7 @@ const Four = function() {
 }
 
 const Five = function() {
-    if (displayValue == 0) {
+    if (displayValue === 0) {
         displayValue = 5
         display.textContent = displayValue
     } else {
@@ -177,7 +177,7 @@ const Five = function() {
 }
 
 const Six = function() {
-    if (displayValue == 0) {
+    if (displayValue === 0) {
         displayValue = 6
         display.textContent = displayValue
     } else {
@@ -190,7 +190,7 @@ const Six = function() {
 }
 
 const Seven = function() {
-    if (displayValue == 0) {
+    if (displayValue === 0) {
         displayValue = 7
         display.textContent = displayValue
     } else {
@@ -203,7 +203,7 @@ const Seven = function() {
 }
 
 const Eight = function() {
-    if (displayValue == 0) {
+    if (displayValue === 0) {
         displayValue = 8
         display.textContent = displayValue
     } else {
@@ -216,7 +216,7 @@ const Eight = function() {
 }
 
 const Nine = function() {
-    if (displayValue == 0) {
+    if (displayValue === 0) {
         displayValue = 9
         display.textContent = displayValue
     } else {
@@ -229,7 +229,7 @@ const Nine = function() {
 }
 
 const Zero = function() {
-    if (displayValue == 0) {
+    if (displayValue === 0) {
         displayValue = 0
         display.textContent = displayValue
     } else {
@@ -241,3 +241,22 @@ const Zero = function() {
     }
 }
 
+const Dot = function() {
+    if (displayValue === 0) {
+        displayValue = "0."
+        display.textContent = displayValue
+    } else {
+        let temp = displayValue.toString().split("")
+        temp.push(".")
+        displayValue = temp.join("")
+        display.textContent = displayValue
+
+    }
+}
+
+
+
+
+const Pressed = function() {
+    addEventListener
+}
