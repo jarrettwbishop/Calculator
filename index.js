@@ -247,6 +247,7 @@ const Dot = function() {
         display.textContent = displayValue
     } else {
         let temp = displayValue.toString().split("")
+        if (temp.includes(".")) return;
         temp.push(".")
         displayValue = temp.join("")
         display.textContent = displayValue
