@@ -38,6 +38,17 @@ button:hover {
     background-color: #cbd5e1;
 }
 
+button#multiply:hover,
+button#divide:hover,
+button#plus:hover,
+button#minus:hover {
+    background-color: #bfdbfe;
+}
+
+button#equals:hover {
+    background-color: #dcfce7;
+}
+
 
 .calculator {
     background-color: #94a3b8;
@@ -94,6 +105,10 @@ button:hover {
 .row-1 button {
     flex-grow: 1;
     border-radius: 20px;
+}
+
+.row-1 button:hover {
+    background-color: #fee2e2;
 }
 .row-2 {
     display: flex;
