@@ -31,6 +31,7 @@ button {
     background-color: #e2e8f0;
     box-shadow: 0 0 3px 2px #47556936;
     border-style: none;
+    font-weight: 700;
 }
 
 button:hover {
@@ -40,7 +41,8 @@ button:hover {
 
 .calculator {
     background-color: #94a3b8;
-    box-shadow: 0 0 20px 4px rgba(255, 255, 255, 0.144);
+    box-shadow: 0 0 20px 10px #02061748;
+    border: 1px solid #020617;
     padding: 10px 5px;
     display: flex;
     flex-direction: column;
