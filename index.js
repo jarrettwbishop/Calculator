@@ -8,30 +8,44 @@ let operation;
 
 const Add = function() {
     if( valOne > 0 && displayValue > 0) {
+        valOne > 0 ? valTwo = displayValue : valOne = displayValue
         valOne = Operate(valOne,valTwo,operation)
-    }
+        operation = "+"
+        valTwo = 0;
+        displayValue = 0;
+    } else {
     operation = "+"
     valOne > 0 ? valTwo = displayValue : valOne = displayValue
     valOne = Operate(valOne,valTwo,operation)
     valTwo = 0;
-    displayValue = 0;    
+    displayValue = 0;  
+    }
 }
 
 const Subtract = function() {
     if( valOne > 0 && displayValue > 0) {
+        valOne > 0 ? valTwo = displayValue : valOne = displayValue
         valOne = Operate(valOne,valTwo,operation)
-    }
+        operation = "-"
+        valTwo = 0;
+        displayValue = 0;
+    } else {
     operation = "-"
     valOne > 0 ? valTwo = displayValue : valOne = displayValue
     valOne = Operate(valOne,valTwo,operation)
     valTwo = 0;
     displayValue = 0;
+    }
 }
 
 const Multiply = function() {
     if( valOne > 0 && displayValue > 0) {
+        valOne > 0 ? valTwo = displayValue : valOne = displayValue
         valOne = Operate(valOne,valTwo,operation)
-    }
+        operation = "*"
+        valTwo = 0;
+        displayValue = 0;
+    } else {
     operation = "*"
     valOne > 0 ? valTwo = displayValue : valOne = displayValue
     if (valTwo > 0 || valTwo < 0) {
@@ -39,12 +53,17 @@ const Multiply = function() {
     }
     valTwo = 0;
     displayValue = 0;
+    }
 }
 
 const Divide = function() {
     if( valOne > 0 && displayValue > 0) {
+        valOne > 0 ? valTwo = displayValue : valOne = displayValue
         valOne = Operate(valOne,valTwo,operation)
-    }
+        operation = "/"
+        valTwo = 0;
+        displayValue = 0;
+    } else {
     operation = "/"
     valOne > 0 ? valTwo = displayValue : valOne = displayValue
     if (valTwo > 0 || valTwo < 0) {
@@ -52,6 +71,7 @@ const Divide = function() {
     }
     valTwo = 0;
     displayValue = 0;
+    }
 }
 
 const Equals = function() {
